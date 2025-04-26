@@ -354,9 +354,10 @@ namespace MHXXSaveEditor
                 ListViewItem itm = new ListViewItem(arr);
                 listViewItem.Items.Add(itm);
             }
+            
             listViewItem.EndUpdate();
             listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);            
             comboBoxItem.Items.AddRange(GameConstants.ItemNameList);
         }
 
@@ -476,6 +477,7 @@ namespace MHXXSaveEditor
 
                 error = 0;
             }
+                        
             listViewEquipment.EndUpdate();
             listViewEquipment.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             listViewEquipment.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -850,7 +852,7 @@ namespace MHXXSaveEditor
                     comboBoxEquipName.SelectedIndex = 0;
                 else
                     comboBoxEquipName.SelectedIndex = 1;
-
+                
                 listViewEquipment.SelectedItems[0].SubItems[1].Text = comboBoxEquipType.Text;
                 listViewEquipment.SelectedItems[0].SubItems[2].Text = comboBoxEquipName.Text;
                 listViewEquipment.SelectedItems[0].SubItems[2].ForeColor = Color.Black;
@@ -1629,6 +1631,11 @@ namespace MHXXSaveEditor
         private void button1_Click_1(object sender, EventArgs e)
         {
             // player. //this line appears to be broken when compiling commenting out. Unsure of use/purpose as it is not commneted
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void ListViewPalicoEquipment_SelectedIndexChanged(object sender, EventArgs e)

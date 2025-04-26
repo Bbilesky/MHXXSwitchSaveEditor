@@ -399,7 +399,7 @@
             this.importFromToolStripMenuItem,
             this.exportToToolStripMenuItem});
             this.itemBoxToolStripMenuItem.Name = "itemBoxToolStripMenuItem";
-            this.itemBoxToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.itemBoxToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.itemBoxToolStripMenuItem.Text = "Item Box";
             // 
             // maxAmountItemsToolStripMenuItem
@@ -460,7 +460,7 @@
             this.importFromToolStripMenuItem1,
             this.exportToToolStripMenuItem1});
             this.equipmentBoxToolStripMenuItem.Name = "equipmentBoxToolStripMenuItem";
-            this.equipmentBoxToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.equipmentBoxToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.equipmentBoxToolStripMenuItem.Text = "Equipment Box";
             // 
             // importFromToolStripMenuItem1
@@ -491,14 +491,14 @@
             // toSwitchToolStripMenuItem
             // 
             this.toSwitchToolStripMenuItem.Name = "toSwitchToolStripMenuItem";
-            this.toSwitchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.toSwitchToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.toSwitchToolStripMenuItem.Text = "To Switch";
             this.toSwitchToolStripMenuItem.Click += new System.EventHandler(this.toSwitchToolStripMenuItem_Click);
             // 
             // to3DSToolStripMenuItem
             // 
             this.to3DSToolStripMenuItem.Name = "to3DSToolStripMenuItem";
-            this.to3DSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.to3DSToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.to3DSToolStripMenuItem.Text = "To 3DS";
             this.to3DSToolStripMenuItem.Click += new System.EventHandler(this.to3DSToolStripMenuItem_Click);
             // 
@@ -541,6 +541,9 @@
             // 
             // tabControlMain
             // 
+            this.tabControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlMain.Controls.Add(this.generalTab);
             this.tabControlMain.Controls.Add(this.playerTab);
             this.tabControlMain.Controls.Add(this.itemBoxTab);
@@ -550,6 +553,7 @@
             this.tabControlMain.Enabled = false;
             this.tabControlMain.Location = new System.Drawing.Point(10, 26);
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControlMain.Multiline = true;
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(609, 292);
@@ -584,7 +588,7 @@
             this.generalTab.Margin = new System.Windows.Forms.Padding(2);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(2);
-            this.generalTab.Size = new System.Drawing.Size(522, 266);
+            this.generalTab.Size = new System.Drawing.Size(601, 266);
             this.generalTab.TabIndex = 1;
             this.generalTab.Text = "General";
             this.generalTab.UseVisualStyleBackColor = true;
@@ -887,7 +891,7 @@
             this.playerTab.Margin = new System.Windows.Forms.Padding(2);
             this.playerTab.Name = "playerTab";
             this.playerTab.Padding = new System.Windows.Forms.Padding(2);
-            this.playerTab.Size = new System.Drawing.Size(522, 266);
+            this.playerTab.Size = new System.Drawing.Size(601, 266);
             this.playerTab.TabIndex = 2;
             this.playerTab.Text = "Player";
             this.playerTab.UseVisualStyleBackColor = true;
@@ -1450,6 +1454,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.buttonClearItemSlot);
             this.groupBox1.Controls.Add(this.numericUpDownItemAmount);
             this.groupBox1.Controls.Add(this.label12);
@@ -1521,12 +1526,16 @@
             // 
             // listViewItem
             // 
+            this.listViewItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.listViewItem.FullRowSelect = true;
             this.listViewItem.GridLines = true;
+            this.listViewItem.HideSelection = false;
             this.listViewItem.Location = new System.Drawing.Point(5, 6);
             this.listViewItem.MultiSelect = false;
             this.listViewItem.Name = "listViewItem";
@@ -1573,7 +1582,7 @@
             this.equipTab.Margin = new System.Windows.Forms.Padding(2);
             this.equipTab.Name = "equipTab";
             this.equipTab.Padding = new System.Windows.Forms.Padding(2);
-            this.equipTab.Size = new System.Drawing.Size(522, 266);
+            this.equipTab.Size = new System.Drawing.Size(601, 266);
             this.equipTab.TabIndex = 3;
             this.equipTab.Text = "Equipment";
             this.equipTab.UseVisualStyleBackColor = true;
@@ -1777,6 +1786,7 @@
             this.columnHeaderEquipName});
             this.listViewEquipment.FullRowSelect = true;
             this.listViewEquipment.GridLines = true;
+            this.listViewEquipment.HideSelection = false;
             this.listViewEquipment.Location = new System.Drawing.Point(4, 5);
             this.listViewEquipment.Margin = new System.Windows.Forms.Padding(2);
             this.listViewEquipment.MultiSelect = false;
@@ -1809,7 +1819,7 @@
             this.palicoTab.Margin = new System.Windows.Forms.Padding(2);
             this.palicoTab.Name = "palicoTab";
             this.palicoTab.Padding = new System.Windows.Forms.Padding(2);
-            this.palicoTab.Size = new System.Drawing.Size(522, 266);
+            this.palicoTab.Size = new System.Drawing.Size(601, 266);
             this.palicoTab.TabIndex = 6;
             this.palicoTab.Text = "Palico";
             this.palicoTab.UseVisualStyleBackColor = true;
@@ -1833,6 +1843,7 @@
             this.columnHeader6});
             this.listViewPalico.FullRowSelect = true;
             this.listViewPalico.GridLines = true;
+            this.listViewPalico.HideSelection = false;
             this.listViewPalico.Location = new System.Drawing.Point(4, 5);
             this.listViewPalico.Margin = new System.Windows.Forms.Padding(2);
             this.listViewPalico.MultiSelect = false;
@@ -1870,7 +1881,7 @@
             this.palicoEquipTab.Margin = new System.Windows.Forms.Padding(2);
             this.palicoEquipTab.Name = "palicoEquipTab";
             this.palicoEquipTab.Padding = new System.Windows.Forms.Padding(2);
-            this.palicoEquipTab.Size = new System.Drawing.Size(522, 266);
+            this.palicoEquipTab.Size = new System.Drawing.Size(601, 266);
             this.palicoEquipTab.TabIndex = 7;
             this.palicoEquipTab.Text = "Palico Equip";
             this.palicoEquipTab.UseVisualStyleBackColor = true;
@@ -1948,6 +1959,7 @@
             this.columnHeader9});
             this.listViewPalicoEquipment.FullRowSelect = true;
             this.listViewPalicoEquipment.GridLines = true;
+            this.listViewPalicoEquipment.HideSelection = false;
             this.listViewPalicoEquipment.Location = new System.Drawing.Point(4, 5);
             this.listViewPalicoEquipment.Margin = new System.Windows.Forms.Padding(2);
             this.listViewPalicoEquipment.MultiSelect = false;
@@ -1976,10 +1988,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(630, 327);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.menuStripMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1987,6 +2000,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MHXX Save Editor";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
