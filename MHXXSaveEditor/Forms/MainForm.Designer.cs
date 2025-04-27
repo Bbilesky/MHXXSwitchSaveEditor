@@ -238,7 +238,7 @@
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripMain.Size = new System.Drawing.Size(630, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(614, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStripMain";
             // 
@@ -556,7 +556,7 @@
             this.tabControlMain.Multiline = true;
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(609, 292);
+            this.tabControlMain.Size = new System.Drawing.Size(593, 363);
             this.tabControlMain.TabIndex = 1;
             // 
             // generalTab
@@ -588,7 +588,7 @@
             this.generalTab.Margin = new System.Windows.Forms.Padding(2);
             this.generalTab.Name = "generalTab";
             this.generalTab.Padding = new System.Windows.Forms.Padding(2);
-            this.generalTab.Size = new System.Drawing.Size(601, 266);
+            this.generalTab.Size = new System.Drawing.Size(644, 406);
             this.generalTab.TabIndex = 1;
             this.generalTab.Text = "General";
             this.generalTab.UseVisualStyleBackColor = true;
@@ -891,7 +891,7 @@
             this.playerTab.Margin = new System.Windows.Forms.Padding(2);
             this.playerTab.Name = "playerTab";
             this.playerTab.Padding = new System.Windows.Forms.Padding(2);
-            this.playerTab.Size = new System.Drawing.Size(601, 266);
+            this.playerTab.Size = new System.Drawing.Size(644, 406);
             this.playerTab.TabIndex = 2;
             this.playerTab.Text = "Player";
             this.playerTab.UseVisualStyleBackColor = true;
@@ -1447,27 +1447,28 @@
             this.itemBoxTab.Margin = new System.Windows.Forms.Padding(2);
             this.itemBoxTab.Name = "itemBoxTab";
             this.itemBoxTab.Padding = new System.Windows.Forms.Padding(2);
-            this.itemBoxTab.Size = new System.Drawing.Size(601, 266);
+            this.itemBoxTab.Size = new System.Drawing.Size(585, 337);
             this.itemBoxTab.TabIndex = 4;
             this.itemBoxTab.Text = "Item Box";
             this.itemBoxTab.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.buttonClearItemSlot);
             this.groupBox1.Controls.Add(this.numericUpDownItemAmount);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.comboBoxItem);
-            this.groupBox1.Location = new System.Drawing.Point(5, 216);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(2, 288);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(591, 47);
+            this.groupBox1.Size = new System.Drawing.Size(581, 47);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // buttonClearItemSlot
             // 
@@ -1539,7 +1540,7 @@
             this.listViewItem.Location = new System.Drawing.Point(5, 6);
             this.listViewItem.MultiSelect = false;
             this.listViewItem.Name = "listViewItem";
-            this.listViewItem.Size = new System.Drawing.Size(591, 206);
+            this.listViewItem.Size = new System.Drawing.Size(554, 266);
             this.listViewItem.TabIndex = 2;
             this.listViewItem.UseCompatibleStateImageBehavior = false;
             this.listViewItem.View = System.Windows.Forms.View.Details;
@@ -1582,15 +1583,17 @@
             this.equipTab.Margin = new System.Windows.Forms.Padding(2);
             this.equipTab.Name = "equipTab";
             this.equipTab.Padding = new System.Windows.Forms.Padding(2);
-            this.equipTab.Size = new System.Drawing.Size(601, 266);
+            this.equipTab.Size = new System.Drawing.Size(585, 337);
             this.equipTab.TabIndex = 3;
             this.equipTab.Text = "Equipment";
             this.equipTab.UseVisualStyleBackColor = true;
+            this.equipTab.Click += new System.EventHandler(this.equipTab_Click);
             // 
             // labelTransmogID
             // 
+            this.labelTransmogID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelTransmogID.AutoSize = true;
-            this.labelTransmogID.Location = new System.Drawing.Point(510, 240);
+            this.labelTransmogID.Location = new System.Drawing.Point(522, 308);
             this.labelTransmogID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTransmogID.Name = "labelTransmogID";
             this.labelTransmogID.Size = new System.Drawing.Size(10, 13);
@@ -1600,8 +1603,9 @@
             // 
             // buttonTransmogrify
             // 
+            this.buttonTransmogrify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonTransmogrify.Enabled = false;
-            this.buttonTransmogrify.Location = new System.Drawing.Point(417, 235);
+            this.buttonTransmogrify.Location = new System.Drawing.Point(428, 302);
             this.buttonTransmogrify.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTransmogrify.Name = "buttonTransmogrify";
             this.buttonTransmogrify.Size = new System.Drawing.Size(90, 24);
@@ -1612,9 +1616,10 @@
             // 
             // comboBoxEquipName
             // 
+            this.comboBoxEquipName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxEquipName.Enabled = false;
             this.comboBoxEquipName.FormattingEnabled = true;
-            this.comboBoxEquipName.Location = new System.Drawing.Point(73, 206);
+            this.comboBoxEquipName.Location = new System.Drawing.Point(84, 280);
             this.comboBoxEquipName.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEquipName.Name = "comboBoxEquipName";
             this.comboBoxEquipName.Size = new System.Drawing.Size(136, 21);
@@ -1623,8 +1628,9 @@
             // 
             // numericUpDownEquipLevel
             // 
+            this.numericUpDownEquipLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.numericUpDownEquipLevel.Enabled = false;
-            this.numericUpDownEquipLevel.Location = new System.Drawing.Point(73, 232);
+            this.numericUpDownEquipLevel.Location = new System.Drawing.Point(84, 306);
             this.numericUpDownEquipLevel.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownEquipLevel.Maximum = new decimal(new int[] {
             20,
@@ -1637,7 +1643,7 @@
             0,
             0});
             this.numericUpDownEquipLevel.Name = "numericUpDownEquipLevel";
-            this.numericUpDownEquipLevel.Size = new System.Drawing.Size(135, 20);
+            this.numericUpDownEquipLevel.Size = new System.Drawing.Size(136, 20);
             this.numericUpDownEquipLevel.TabIndex = 15;
             this.toolTip1.SetToolTip(this.numericUpDownEquipLevel, "Please refer to Kiranico for the levels of your equipment");
             this.numericUpDownEquipLevel.Value = new decimal(new int[] {
@@ -1649,8 +1655,9 @@
             // 
             // buttonEditTalisman
             // 
+            this.buttonEditTalisman.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonEditTalisman.Enabled = false;
-            this.buttonEditTalisman.Location = new System.Drawing.Point(417, 206);
+            this.buttonEditTalisman.Location = new System.Drawing.Point(428, 277);
             this.buttonEditTalisman.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditTalisman.Name = "buttonEditTalisman";
             this.buttonEditTalisman.Size = new System.Drawing.Size(90, 24);
@@ -1661,8 +1668,9 @@
             // 
             // buttonEditKinsect
             // 
+            this.buttonEditKinsect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonEditKinsect.Enabled = false;
-            this.buttonEditKinsect.Location = new System.Drawing.Point(417, 176);
+            this.buttonEditKinsect.Location = new System.Drawing.Point(428, 251);
             this.buttonEditKinsect.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditKinsect.Name = "buttonEditKinsect";
             this.buttonEditKinsect.Size = new System.Drawing.Size(90, 24);
@@ -1673,9 +1681,10 @@
             // 
             // comboBoxEquipDeco3
             // 
+            this.comboBoxEquipDeco3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxEquipDeco3.Enabled = false;
             this.comboBoxEquipDeco3.FormattingEnabled = true;
-            this.comboBoxEquipDeco3.Location = new System.Drawing.Point(268, 231);
+            this.comboBoxEquipDeco3.Location = new System.Drawing.Point(279, 305);
             this.comboBoxEquipDeco3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEquipDeco3.Name = "comboBoxEquipDeco3";
             this.comboBoxEquipDeco3.Size = new System.Drawing.Size(128, 21);
@@ -1685,8 +1694,9 @@
             // 
             // label35
             // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(220, 233);
+            this.label35.Location = new System.Drawing.Point(231, 308);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(42, 13);
@@ -1695,9 +1705,10 @@
             // 
             // comboBoxEquipDeco2
             // 
+            this.comboBoxEquipDeco2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxEquipDeco2.Enabled = false;
             this.comboBoxEquipDeco2.FormattingEnabled = true;
-            this.comboBoxEquipDeco2.Location = new System.Drawing.Point(268, 206);
+            this.comboBoxEquipDeco2.Location = new System.Drawing.Point(279, 280);
             this.comboBoxEquipDeco2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEquipDeco2.Name = "comboBoxEquipDeco2";
             this.comboBoxEquipDeco2.Size = new System.Drawing.Size(128, 21);
@@ -1707,8 +1718,9 @@
             // 
             // label36
             // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(220, 209);
+            this.label36.Location = new System.Drawing.Point(231, 283);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(42, 13);
@@ -1717,9 +1729,10 @@
             // 
             // comboBoxEquipDeco1
             // 
+            this.comboBoxEquipDeco1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxEquipDeco1.Enabled = false;
             this.comboBoxEquipDeco1.FormattingEnabled = true;
-            this.comboBoxEquipDeco1.Location = new System.Drawing.Point(268, 180);
+            this.comboBoxEquipDeco1.Location = new System.Drawing.Point(279, 254);
             this.comboBoxEquipDeco1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEquipDeco1.Name = "comboBoxEquipDeco1";
             this.comboBoxEquipDeco1.Size = new System.Drawing.Size(128, 21);
@@ -1729,8 +1742,9 @@
             // 
             // label37
             // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(220, 182);
+            this.label37.Location = new System.Drawing.Point(231, 257);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(42, 13);
@@ -1739,8 +1753,9 @@
             // 
             // label34
             // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(4, 233);
+            this.label34.Location = new System.Drawing.Point(15, 308);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(33, 13);
@@ -1749,8 +1764,9 @@
             // 
             // label33
             // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(4, 209);
+            this.label33.Location = new System.Drawing.Point(15, 283);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(35, 13);
@@ -1759,9 +1775,10 @@
             // 
             // comboBoxEquipType
             // 
+            this.comboBoxEquipType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxEquipType.Enabled = false;
             this.comboBoxEquipType.FormattingEnabled = true;
-            this.comboBoxEquipType.Location = new System.Drawing.Point(73, 180);
+            this.comboBoxEquipType.Location = new System.Drawing.Point(84, 254);
             this.comboBoxEquipType.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEquipType.Name = "comboBoxEquipType";
             this.comboBoxEquipType.Size = new System.Drawing.Size(136, 21);
@@ -1770,8 +1787,9 @@
             // 
             // label29
             // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(4, 182);
+            this.label29.Location = new System.Drawing.Point(15, 257);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 13);
@@ -1780,6 +1798,9 @@
             // 
             // listViewEquipment
             // 
+            this.listViewEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewEquipment.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderEquipSlot,
             this.columnHeaderEquipType,
@@ -1791,7 +1812,7 @@
             this.listViewEquipment.Margin = new System.Windows.Forms.Padding(2);
             this.listViewEquipment.MultiSelect = false;
             this.listViewEquipment.Name = "listViewEquipment";
-            this.listViewEquipment.Size = new System.Drawing.Size(516, 160);
+            this.listViewEquipment.Size = new System.Drawing.Size(542, 234);
             this.listViewEquipment.TabIndex = 0;
             this.listViewEquipment.UseCompatibleStateImageBehavior = false;
             this.listViewEquipment.View = System.Windows.Forms.View.Details;
@@ -1819,14 +1840,15 @@
             this.palicoTab.Margin = new System.Windows.Forms.Padding(2);
             this.palicoTab.Name = "palicoTab";
             this.palicoTab.Padding = new System.Windows.Forms.Padding(2);
-            this.palicoTab.Size = new System.Drawing.Size(601, 266);
+            this.palicoTab.Size = new System.Drawing.Size(585, 337);
             this.palicoTab.TabIndex = 6;
             this.palicoTab.Text = "Palico";
             this.palicoTab.UseVisualStyleBackColor = true;
             // 
             // buttonEditPalico
             // 
-            this.buttonEditPalico.Location = new System.Drawing.Point(430, 239);
+            this.buttonEditPalico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEditPalico.Location = new System.Drawing.Point(384, 274);
             this.buttonEditPalico.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditPalico.Name = "buttonEditPalico";
             this.buttonEditPalico.Size = new System.Drawing.Size(90, 24);
@@ -1837,6 +1859,9 @@
             // 
             // listViewPalico
             // 
+            this.listViewPalico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewPalico.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader5,
@@ -1848,7 +1873,7 @@
             this.listViewPalico.Margin = new System.Windows.Forms.Padding(2);
             this.listViewPalico.MultiSelect = false;
             this.listViewPalico.Name = "listViewPalico";
-            this.listViewPalico.Size = new System.Drawing.Size(516, 224);
+            this.listViewPalico.Size = new System.Drawing.Size(480, 256);
             this.listViewPalico.TabIndex = 1;
             this.listViewPalico.UseCompatibleStateImageBehavior = false;
             this.listViewPalico.View = System.Windows.Forms.View.Details;
@@ -1881,15 +1906,16 @@
             this.palicoEquipTab.Margin = new System.Windows.Forms.Padding(2);
             this.palicoEquipTab.Name = "palicoEquipTab";
             this.palicoEquipTab.Padding = new System.Windows.Forms.Padding(2);
-            this.palicoEquipTab.Size = new System.Drawing.Size(601, 266);
+            this.palicoEquipTab.Size = new System.Drawing.Size(585, 337);
             this.palicoEquipTab.TabIndex = 7;
             this.palicoEquipTab.Text = "Palico Equip";
             this.palicoEquipTab.UseVisualStyleBackColor = true;
             // 
             // labelTransmogPalicoID
             // 
+            this.labelTransmogPalicoID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelTransmogPalicoID.AutoSize = true;
-            this.labelTransmogPalicoID.Location = new System.Drawing.Point(512, 243);
+            this.labelTransmogPalicoID.Location = new System.Drawing.Point(507, 308);
             this.labelTransmogPalicoID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTransmogPalicoID.Name = "labelTransmogPalicoID";
             this.labelTransmogPalicoID.Size = new System.Drawing.Size(10, 13);
@@ -1899,8 +1925,9 @@
             // 
             // buttonTransmogrifyPalico
             // 
+            this.buttonTransmogrifyPalico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonTransmogrifyPalico.Enabled = false;
-            this.buttonTransmogrifyPalico.Location = new System.Drawing.Point(421, 237);
+            this.buttonTransmogrifyPalico.Location = new System.Drawing.Point(410, 302);
             this.buttonTransmogrifyPalico.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTransmogrifyPalico.Name = "buttonTransmogrifyPalico";
             this.buttonTransmogrifyPalico.Size = new System.Drawing.Size(90, 24);
@@ -1911,9 +1938,10 @@
             // 
             // comboBoxPalicoEquip
             // 
+            this.comboBoxPalicoEquip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxPalicoEquip.Enabled = false;
             this.comboBoxPalicoEquip.FormattingEnabled = true;
-            this.comboBoxPalicoEquip.Location = new System.Drawing.Point(249, 240);
+            this.comboBoxPalicoEquip.Location = new System.Drawing.Point(244, 305);
             this.comboBoxPalicoEquip.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPalicoEquip.Name = "comboBoxPalicoEquip";
             this.comboBoxPalicoEquip.Size = new System.Drawing.Size(151, 21);
@@ -1922,8 +1950,9 @@
             // 
             // label30
             // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(211, 243);
+            this.label30.Location = new System.Drawing.Point(205, 308);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(35, 13);
@@ -1932,9 +1961,10 @@
             // 
             // comboBoxPalicoEqpType
             // 
+            this.comboBoxPalicoEqpType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxPalicoEqpType.Enabled = false;
             this.comboBoxPalicoEqpType.FormattingEnabled = true;
-            this.comboBoxPalicoEqpType.Location = new System.Drawing.Point(46, 240);
+            this.comboBoxPalicoEqpType.Location = new System.Drawing.Point(41, 305);
             this.comboBoxPalicoEqpType.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPalicoEqpType.Name = "comboBoxPalicoEqpType";
             this.comboBoxPalicoEqpType.Size = new System.Drawing.Size(151, 21);
@@ -1943,8 +1973,9 @@
             // 
             // label31
             // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(11, 243);
+            this.label31.Location = new System.Drawing.Point(6, 308);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(31, 13);
@@ -1953,6 +1984,9 @@
             // 
             // listViewPalicoEquipment
             // 
+            this.listViewPalicoEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewPalicoEquipment.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
             this.columnHeader8,
@@ -1964,7 +1998,7 @@
             this.listViewPalicoEquipment.Margin = new System.Windows.Forms.Padding(2);
             this.listViewPalicoEquipment.MultiSelect = false;
             this.listViewPalicoEquipment.Name = "listViewPalicoEquipment";
-            this.listViewPalicoEquipment.Size = new System.Drawing.Size(516, 224);
+            this.listViewPalicoEquipment.Size = new System.Drawing.Size(496, 280);
             this.listViewPalicoEquipment.TabIndex = 1;
             this.listViewPalicoEquipment.UseCompatibleStateImageBehavior = false;
             this.listViewPalicoEquipment.View = System.Windows.Forms.View.Details;
@@ -1988,9 +2022,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(630, 327);
+            this.ClientSize = new System.Drawing.Size(614, 398);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.menuStripMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

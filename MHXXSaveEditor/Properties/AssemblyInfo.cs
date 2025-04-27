@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MHGenUSaveEditor")]
 [assembly: AssemblyCopyright("Copyright ©  2017,2022")]
-[assembly: AssemblyTrademark("Ukee, Dawnshifter, iSharingan")]
+[assembly: AssemblyTrademark("Ukee, Dawnshifter, iSharingan,Bbilesky")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

@@ -241,7 +241,7 @@ namespace MHXXSaveEditor
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Made by Dawnshifter based on work of Ukee for GBATemp\nBased off APM's MHX/MHGen Save Editor\nAlso thanks to Seth VanHeulen for the Save File structure\nAnd some MHX/MHGen/MHXX hex editing threads in GBATemp\n\nFurther fixes/changes by iSharingan", "About");
+            MessageBox.Show("Made by Dawnshifter based on work of Ukee for GBATemp\nBased off APM's MHX/MHGen Save Editor\nAlso thanks to Seth VanHeulen for the Save File structure\nAnd some MHX/MHGen/MHXX hex editing threads in GBATemp\n\nFurther fixes/changes by iSharingan\nEven further changes by Bbilesky", "About");
         }
 
         public void LoadSave()
@@ -333,8 +333,10 @@ namespace MHXXSaveEditor
             listViewItem.Items.Clear();
             listViewItem.BeginUpdate();
             string itemName;
+            //this iterates through all 2300 slots of the item box, taking the ItemID in that location in the player object and using that ID as the index value for ItemNameList. Therefore, need to change this such that item name is searching ItemNameList for the value with a key matching the ItemID
             for (int a = 0; a < Constants.TOTAL_ITEM_SLOTS; a++) // 2300 slots for 2300 items
             {
+
                 try
                 {
                     itemName = GameConstants.ItemNameList[Convert.ToInt32(player.ItemId[a])];
@@ -358,7 +360,7 @@ namespace MHXXSaveEditor
             listViewItem.EndUpdate();
             listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);            
-            comboBoxItem.Items.AddRange(GameConstants.ItemNameList);
+            comboBoxItem.Items.AddRange(GameConstants.ItemNameList.Values.ToArray());
         }
 
         public void LoadEquipmentBox()
@@ -618,8 +620,8 @@ namespace MHXXSaveEditor
             foreach (ListViewItem i in listViewItem.Items)
             {
                 int iteration = Convert.ToInt32(i.SubItems[0].Text) - 1;
-                
-                player.ItemId[iteration] = Array.IndexOf(GameConstants.ItemNameList, i.SubItems[1].Text).ToString();
+               // GameConstants.ItemNameList.First(kvp => kvp.Value==i.SubItems[1].Text).Key;
+                player.ItemId[iteration] = GameConstants.ItemNameList.First(kvp => kvp.Value == i.SubItems[1].Text).Key.ToString();
                 player.ItemCount[iteration] = i.SubItems[2].Text;
             }
             for (int a = 2299; a >= 0; a--)
@@ -664,13 +666,15 @@ namespace MHXXSaveEditor
 
         private void ListViewItem_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //This gets the dictionary key: Convert.ToInt32(player.ItemId[itemSelectedSlot])
             if (listViewItem.SelectedItems.Count == 0) // Check if nothing was selected
                 return;
             else
             {
                 itemSelectedSlot = Convert.ToInt32(listViewItem.SelectedItems[0].SubItems[0].Text) - 1;
                 numericUpDownItemAmount.Value = Convert.ToInt32(player.ItemCount[itemSelectedSlot]);
-                comboBoxItem.SelectedIndex = Convert.ToInt32(player.ItemId[itemSelectedSlot]);
+                comboBoxItem.SelectedIndex = GameConstants.GetIndex(GameConstants.ItemNameList, Convert.ToInt32(player.ItemId[itemSelectedSlot]));
+
             }
         }
 
@@ -679,8 +683,11 @@ namespace MHXXSaveEditor
             if (listViewItem.SelectedItems.Count == 0) // Check if nothing was selected
                 return;
             else
-            {
-                listViewItem.SelectedItems[0].SubItems[1].Text = GameConstants.ItemNameList[Array.IndexOf(GameConstants.ItemNameList, comboBoxItem.Text)];
+            {   //Old code reads: set text of the selected listviewitem to be equal to the string located in ItemNameList[n] where n is the index number of the first item that matches the text in comboBoxItem
+                //listViewItem.SelectedItems[0].SubItems[1].Text = GameConstants.ItemNameList[Array.IndexOf(GameConstants.ItemNameList, comboBoxItem.Text)];
+
+                listViewItem.SelectedItems[0].SubItems[1].Text = GameConstants.ItemNameList.First(kvp => kvp.Value == comboBoxItem.Text).Value.ToString(); 
+
 
                 if (listViewItem.SelectedItems[0].SubItems[2].Text == "0" && listViewItem.SelectedItems[0].SubItems[1].Text != "-----")
                 {
@@ -694,7 +701,10 @@ namespace MHXXSaveEditor
                 }
 
                 player.ItemCount[itemSelectedSlot] = listViewItem.SelectedItems[0].SubItems[2].Text;
-                player.ItemId[itemSelectedSlot] = Array.IndexOf(GameConstants.ItemNameList, comboBoxItem.Text).ToString();
+                player.ItemId[itemSelectedSlot] = GameConstants.ItemNameList.First(kvp => kvp.Value == comboBoxItem.Text).Key.ToString();
+
+                //Array.IndexOf(GameConstants.ItemNameList, comboBoxItem.Text).ToString();
+               
             }
         }
 
@@ -1184,7 +1194,8 @@ namespace MHXXSaveEditor
             foreach (ListViewItem i in listViewItem.Items)
             {
                 int iteration = Convert.ToInt32(i.SubItems[0].Text) - 1;
-                player.ItemId[iteration] = Array.IndexOf(GameConstants.ItemNameList, i.SubItems[1].Text).ToString();
+                player.ItemId[iteration] = GameConstants.ItemNameList.First(kvp => kvp.Value == i.SubItems[1].Text).Key.ToString();
+                //Array.IndexOf(GameConstants.ItemNameList, i.SubItems[1].Text).ToString();
                 player.ItemCount[iteration] = i.SubItems[2].Text;
             }
 
@@ -1216,7 +1227,7 @@ namespace MHXXSaveEditor
         {
             if (MessageBox.Show("Do you wish visit the source Github for this version?", "Visit Github", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
-                System.Diagnostics.Process.Start("https://github.com/iSharingan/MHXXSaveEditor");
+                System.Diagnostics.Process.Start("https://github.com/Bbilesky/MHXXSwitchSaveEditor");
             }
         }
 
@@ -1443,7 +1454,8 @@ namespace MHXXSaveEditor
                 {
                     foreach (ListViewItem item in listViewItem.Items)
                     {
-                        id = Array.IndexOf(GameConstants.ItemNameList, item.SubItems[1].Text).ToString();
+                        id = GameConstants.ItemNameList.First(kvp => kvp.Value == item.SubItems[1].Text).Key.ToString();
+                        //Array.IndexOf(GameConstants.ItemNameList, item.SubItems[1].Text).ToString();
                         amount = item.SubItems[2].Text;
 
                         tw.WriteLine(id + "," + amount);
@@ -1634,6 +1646,16 @@ namespace MHXXSaveEditor
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void equipTab_Click(object sender, EventArgs e)
         {
 
         }

@@ -2,7 +2,7 @@
 {
     class Constants
     {
-        public const string EDITOR_VERSION = "MHGenU Save Editor v1.2.0 - iSharingan's Prowler Upgrade";
+        public const string EDITOR_VERSION = "MHGenU Save Editor v1.2.0 - Bbilesky's A-Z Update";
 
         public const int SIZEOF_NAME = 32;
 
